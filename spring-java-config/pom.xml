@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>spring-tutorial</artifactId>
+		<groupId>org.techiekernel</groupId>
+		<version>${app.version}</version>
+	</parent>
+	<groupId>org.techiekernel</groupId>
+	<artifactId>spring-java-config</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Spring Java Config Example Project</name>
+	<description>Spring Java Config Example Project</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+	</dependencies>
+	<properties>
+		<spring.version>3.2.4.RELEASE</spring.version>
+		<jdk.version>1.7</jdk.version>
+		<tomcat.location>/var/lib/tomcat7/webapps</tomcat.location>
+	</properties>
+	 <build>
+                <plugins>
+                        <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-war-plugin</artifactId>
+                                <version>2.1.1</version>
+                        </plugin>
+                        <plugin>
+                                <artifactId>maven-compiler-plugin</artifactId>
+                                <configuration>
+                                        <source>${jdk.version}</source>
+                                        <target>${jdk.version}</target>
+                                </configuration>
+                        </plugin>
+                        <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-war-plugin</artifactId>
+                                <version>2.3</version>
+                                <configuration>
+                                        <outputDirectory>${tomcat.location}</outputDirectory>
+                                </configuration>
+                        </plugin>
+                </plugins>
+                <finalName>spring-java-config</finalName>
+        </build>
+	
+
+</project>
